@@ -1,0 +1,2895 @@
+/*~
+Common imports for variables and mixins.
+Do not import any files which output css.
+Imported by most .less files.
+*/
+/*~
+LESS COLOR VARIABLES. Imported by `_imports.less`.
+
+Here is a spreadsheet of [brand color hex values and variable names](https://docs.google.com/spreadsheets/d/1flXHJ0OCGwFJr8DDVceesxBqi2q3g-EeMOtpi45WtW4/edit?usp=sharing) available for use.
+
+If changes are made, update/commit the VSCode snippet by running: `nps create-vscode-colors`
+
+@helper: fedocs/helpers/_color-variables.tt
+*/
+/**
+  * VDS colors
+  * NOTE: This file may be deprecated soon in favor of zds-colors.less.
+  * See: https://www.figma.com/proto/zDaoztXjHamaGKTno6IJVW/%5BVDS%5D-Core?page-id=0%3A1&node-id=375%3A25152&viewport=345%2C48%2C0.24&scaling=scale-down-width
+  */
+/**
+  * Primary Colors
+  */
+/**
+  * UI Colors
+  */
+/**
+ * Text Colors
+ */
+/**
+ * Button Icon Colors
+ */
+/**
+* ZDS colors
+* See: https://www.figma.com/file/QU2VzZitdmjlze1bMY7UZo/Design-System-WIP-(Name-TBD)?node-id=2%3A31
+*/
+/**
+ * Primary Colors
+ */
+/**
+ * Background Colors
+ */
+/**
+ * Stroke Colors
+ */
+/**
+ * Text Colors
+ */
+/**
+* ZDS Spacing
+* Use these for margins or padding.
+* See: https://www.figma.com/file/QU2VzZitdmjlze1bMY7UZo/Design-System-WIP-(Name-TBD)?node-id=2%3A152
+*/
+/**
+* ZDS Font Sizing
+* Use these for font-size.
+* See: https://www.figma.com/file/QU2VzZitdmjlze1bMY7UZo/Design-System-WIP-(Name-TBD)?node-id=2%3A151
+*/
+/**
+* ZDS Font Family
+* NOTE: This should already loaded by _mixins.less
+* See: bodyFontStack / headerFontStack mixin.
+*
+* Folks should leverage font-family: inherit
+* But the entry is per consistency and ease of reference.
+*
+* -apple-system — San Francisco in Safari (on Mac OS X and iOS);Neue Helvetica and Lucida Grande on older versions of Mac OS X.
+* system-ui — default UI font on a given platform.
+* BlinkMacSystemFont — equivalent of -apple-system, for Chrome on Mac OS X.
+* "Segoe UI" — Windows (Vista+) and Windows Phone.
+* Roboto — Android (Ice Cream Sandwich (4.0)+) and Chrome OS.
+* Ubuntu — all versions of Ubuntu.
+*/
+/* stylelint-disable-next-line max-line-length */
+/* -----------------------------------------
+  LESS Variables - Media Queries - These match what is on http://getbootstrap.com/css/#responsive-utilities
+----------------------------------------- */
+/*~
+Contains utility and UI mixins. Imported by `_imports.less`.
+
+TODO: Break into a file for UI and a file for utility.
+*/
+/**
+Button Primary:
+`.btnPrimary(@size, @icon)` - Main CTA button.
+
+    @example
+    <p>
+      <button class="example" data-copy=".btnPrimary()">Button Text</button>
+      <button class="example active" data-copy=".btnPrimary()">Button Text</button>
+      <button class="example disabled">Button Text</button>
+    <p>
+
+    <p>
+      <button class="exampleIcon" data-copy=".btnPrimary(500, @fa-plus-circle)">Button Text</button>
+      <button class="exampleIconleft" data-copy=".btnPrimary(500, @fa-chevron-left, 'left')">Button Text</button>
+      <button class="exampleIconafter" data-copy=".btnPrimary(500, @fa-chevron-right, 'after')">Button Text</button>
+      <button class="exampleIconright" data-copy=".btnPrimary(500, @fa-edit, 'right')">Button Text</button>
+    </p>
+
+    <div class="more">
+      <p>
+        100 (13px)
+        <p>
+          <button class="example100" data-copy=".btnPrimary(100)">Button 100</button>
+          <button class="example100 active" data-copy=".btnPrimary(100)">Button 100</button>
+          <button class="example100 disabled">Button 100</button>
+        <p>
+        <p>
+          <button class="example100Icon" data-copy=".btnPrimary(100, @fa-plus-circle)">Button 100</button>
+          <button class="example100Iconleft" data-copy=".btnPrimary(100, @fa-plus-circle, 'left')">Button 100</button>
+          <button class="example100Iconafter" data-copy=".btnPrimary(100, @fa-plus-circle, 'after')">Button 100</button>
+          <button class="example100Iconright" data-copy=".btnPrimary(100, @fa-plus-circle, 'right')">Button 100</button>
+        </p>
+      </p>
+      <p>
+        200 (13px)
+        <p>
+          <button class="example200" data-copy=".btnPrimary(200)">Button 200</button>
+          <button class="example200 active" data-copy=".btnPrimary(200)">Button 200</button>
+          <button class="example200 disabled">Button 200</button>
+        </p>
+        <p>
+          <button class="example200Icon" data-copy=".btnPrimary(200, @fa-plus-circle)">Button 200</button>
+          <button class="example200Iconleft" data-copy=".btnPrimary(200, @fa-plus-circle, 'left')">Button 200</button>
+          <button class="example200Iconafter" data-copy=".btnPrimary(200, @fa-plus-circle, 'after')">Button 200</button>
+          <button class="example200Iconright" data-copy=".btnPrimary(200, @fa-plus-circle, 'right')">Button 200</button>
+        </p>
+      </p>
+      <p>
+        300 (14px)
+        <p>
+          <button class="example300" data-copy=".btnPrimary(300)">Button 300</button>
+          <button class="example300 active" data-copy=".btnPrimary(300, @fa-plus-circle)">Button 300</button>
+          <button class="example300 disabled">Button 300</button>
+        </p>
+        <p>
+          <button class="example300Icon" data-copy=".btnPrimary(300)">Button 300</button>
+          <button class="example300Iconleft" data-copy=".btnPrimary(300, @fa-plus-circle, 'left')">Button 300</button>
+          <button class="example300Iconafter" data-copy=".btnPrimary(300, @fa-plus-circle, 'after')">Button 300</button>
+          <button class="example300Iconright" data-copy=".btnPrimary(300, @fa-plus-circle, 'right')">Button 300</button>
+        </p>
+      </p>
+      <p>
+        400 (15px)
+        <p>
+          <button class="example400" data-copy=".btnPrimary(400)">Button 400</button>
+          <button class="example400 active" data-copy=".btnPrimary(400)">Button 400</button>
+          <button class="example400 disabled">Button 400</button>
+        </p>
+        <p>
+          <button class="example400Icon" data-copy=".btnPrimary(400, @fa-plus-circle)">Button 400</button>
+          <button class="example400Iconleft" data-copy=".btnPrimary(400, @fa-plus-circle, 'left')">Button 400</button>
+          <button class="example400Iconafter" data-copy=".btnPrimary(400, @fa-plus-circle, 'after')">Button 400</button>
+          <button class="example400Iconright" data-copy=".btnPrimary(400, @fa-plus-circle, 'right')">Button 400</button>
+        </p>
+      </p>
+      <p>
+        500 (16px)
+        <p>
+          <button class="example500" data-copy=".btnPrimary(500)">Button 500</button>
+          <button class="example500 active" data-copy=".btnPrimary(500)">Button 500</button>
+          <button class="example500 disabled">Button 500</button>
+        </p>
+        <p>
+          <button class="example500Icon" data-copy=".btnPrimary(500, @fa-plus-circle)">Button 500</button>
+          <button class="example500Iconleft" data-copy=".btnPrimary(500, @fa-plus-circle, 'left')">Button 500</button>
+          <button class="example500Iconafter" data-copy=".btnPrimary(500, @fa-plus-circle, 'after')">Button 500</button>
+          <button class="example500Iconright" data-copy=".btnPrimary(500, @fa-plus-circle, 'right')">Button 500</button>
+        </p>
+      </p>
+      <p>
+        600 (17px)
+        <p>
+          <button class="example600" data-copy=".btnPrimary(600)">Button 600</button>
+          <button class="example600 active" data-copy=".btnPrimary(600)">Button 600</button>
+          <button class="example600 disabled">Button 600</button>
+        </p>
+        <p>
+          <button class="example600Icon" data-copy=".btnPrimary(600, @fa-plus-circle)">Button 600</button>
+          <button class="example600Iconleft" data-copy=".btnPrimary(600, @fa-plus-circle, 'left')">Button 600</button>
+          <button class="example600Iconafter" data-copy=".btnPrimary(600, @fa-plus-circle, 'after')">Button 600</button>
+          <button class="example600Iconright" data-copy=".btnPrimary(600, @fa-plus-circle, 'right')">Button 600</button>
+        </p>
+      </p>
+    </div>
+
+    @less
+    .example {
+      .btnPrimary();
+    }
+
+    .exampleIcon {
+      .btnPrimary(500, @fa-plus-circle);
+    }
+
+    .exampleIconleft {
+      .btnPrimary(500, @fa-chevron-left, 'left');
+    }
+
+    .exampleIconafter {
+      .btnPrimary(500, @fa-chevron-right, 'after');
+    }
+
+    .exampleIconright {
+      .btnPrimary(500, @fa-edit, 'right');
+    }
+
+    .example100 {
+      .btnPrimary(100);
+    }
+
+    .example100Icon {
+      .btnPrimary(100, @fa-plus-circle);
+    }
+
+    .example100Iconleft {
+      .btnPrimary(100, @fa-plus-circle, 'left');
+    }
+
+    .example100Iconafter {
+      .btnPrimary(100, @fa-plus-circle, 'after');
+    }
+
+    .example100Iconright {
+      .btnPrimary(100, @fa-plus-circle, 'right');
+    }
+
+    .example200 {
+      .btnPrimary(200);
+    }
+
+    .example200Icon {
+      .btnPrimary(200, @fa-plus-circle);
+    }
+
+    .example200Iconleft {
+      .btnPrimary(200, @fa-plus-circle, 'left');
+    }
+
+    .example200Iconafter {
+      .btnPrimary(200, @fa-plus-circle, 'after');
+    }
+
+    .example200Iconright {
+      .btnPrimary(200, @fa-plus-circle, 'right');
+    }
+
+    .example300 {
+      .btnPrimary(300);
+    }
+
+    .example300Icon {
+      .btnPrimary(300, @fa-plus-circle);
+    }
+
+    .example300Iconleft {
+      .btnPrimary(300, @fa-plus-circle, 'left');
+    }
+
+    .example300Iconafter {
+      .btnPrimary(300, @fa-plus-circle, 'after');
+    }
+
+    .example300Iconright {
+      .btnPrimary(300, @fa-plus-circle, 'right');
+    }
+
+    .example400 {
+      .btnPrimary(400);
+    }
+
+    .example400Icon {
+      .btnPrimary(400, @fa-plus-circle);
+    }
+
+    .example400Iconleft {
+      .btnPrimary(400, @fa-plus-circle, 'left');
+    }
+
+    .example400Iconafter {
+      .btnPrimary(400, @fa-plus-circle, 'after');
+    }
+
+    .example400Iconright {
+      .btnPrimary(400, @fa-plus-circle, 'right');
+    }
+
+    .example500 {
+      .btnPrimary(500);
+    }
+
+    .example500Icon {
+      .btnPrimary(500, @fa-plus-circle);
+    }
+
+    .example500Iconleft {
+      .btnPrimary(500, @fa-plus-circle, 'left');
+    }
+
+    .example500Iconafter {
+      .btnPrimary(500, @fa-plus-circle, 'after');
+    }
+
+    .example500Iconright {
+      .btnPrimary(500, @fa-plus-circle, 'right');
+    }
+
+    .example600 {
+      .btnPrimary(600);
+    }
+
+    .example600Icon {
+      .btnPrimary(600, @fa-plus-circle);
+    }
+
+    .example600Iconleft {
+      .btnPrimary(600, @fa-plus-circle, 'left');
+    }
+
+    .example600Iconafter {
+      .btnPrimary(600, @fa-plus-circle, 'after');
+    }
+
+    .example600Iconright {
+      .btnPrimary(600, @fa-plus-circle, 'right');
+    }
+
+  @section ui.buttons
+*/
+/**
+Circle Button Primary:
+`.circlePrimary(@size, @icon)` - Main CTA button.
+
+    @example
+    <button class="example" data-copy=".circlePrimary(500, @fa-plus-circle)">Button Text</button>
+    <button class="example active" data-copy=".circlePrimary(500)">Button Text</button>
+    <button class="example disabled">Button Text</button>
+
+    <div class="more">
+      <p>
+        100 (13px) <button class="example100" data-copy=".circlePrimary(100, @fa-plus-circle)">Button 100</button>
+        <button class="example100 active" data-copy=".circlePrimary(100, @fa-plus-circle)">Button 100</button>
+        <button class="example100 disabled">Button 100</button>
+      </p>
+      <p>
+        200 (13px) <button class="example200" data-copy=".circlePrimary(200, @fa-plus-circle)">Button 200</button>
+        <button class="example200 active" data-copy=".circlePrimary(200, @fa-plus-circle)">Button 200</button>
+        <button class="example200 disabled">Button 200</button>
+      </p>
+      <p>
+        300 (14px) <button class="example300" data-copy=".circlePrimary(300, @fa-plus-circle)">Button 300</button>
+        <button class="example300 active" data-copy=".circlePrimary(300, @fa-plus-circle)">Button 300</button>
+        <button class="example300 disabled">Button 300</button>
+      </p>
+      <p>
+        400 (15px) <button class="example400" data-copy=".circlePrimary(400, @fa-plus-circle)">Button 400</button>
+        <button class="example400 active" data-copy=".circlePrimary(400, @fa-plus-circle)">Button 400</button>
+        <button class="example400 disabled">Button 400</button>
+      </p>
+      <p>
+        500 (16px) <button class="example500" data-copy=".circlePrimary(500, @fa-plus-circle)">Button 500</button>
+        <button class="example500 active" data-copy=".circlePrimary(500, @fa-plus-circle)">Button 500</button>
+        <button class="example500 disabled">Button 500</button>
+      </p>
+      <p>
+        600 (17px) <button class="example600" data-copy=".circlePrimary(600, @fa-plus-circle)">Button 600</button>
+        <button class="example600 active" data-copy=".circlePrimary(600, @fa-plus-circle)">Button 600</button>
+        <button class="example600 disabled">Button 600</button>
+      </p>
+    </div>
+
+    @less
+    .example {
+      .circlePrimary(500, @fa-plus-circle);
+    }
+
+    .example100 {
+      .circlePrimary(100, @fa-plus-circle);
+    }
+
+    .example200 {
+      .circlePrimary(200, @fa-plus-circle);
+    }
+
+    .example300 {
+      .circlePrimary(300, @fa-plus-circle);
+    }
+
+    .example400 {
+      .circlePrimary(400, @fa-plus-circle);
+    }
+
+    .example500 {
+      .circlePrimary(500, @fa-plus-circle);
+    }
+
+    .example600 {
+      .circlePrimary(600, @fa-plus-circle);
+    }
+
+  @section ui.buttons
+*/
+/**
+Button Secondary:
+`.btnSecondary(@size)` - Secondary CTA button.
+
+    @example
+    <p>
+      <button class="example" data-copy=".btnSecondary()">Button Text</button>
+      <button class="example active" data-copy=".btnSecondary()">Button Text</button>
+      <button class="example disabled">Button Text</button>
+    </p>
+    <p>
+      <button class="exampleIcon" data-copy=".btnSecondary(500, @fa-plus-circle)">Button Text</button>
+      <button class="exampleIconleft" data-copy=".btnSecondary(500, @fa-plus-circle, 'left')">Button Text</button>
+      <button class="exampleIconafter" data-copy=".btnSecondary(500, @fa-plus-circle, 'after')">Button Text</button>
+      <button class="exampleIconright" data-copy=".btnSecondary(500, @fa-plus-circle, 'right')">Button Text</button>
+    </p>
+
+    <div class="more">
+      <p>
+        100 (13px) <button class="example100" data-copy=".btnSecondary(100)">Button 100</button>
+        <button class="example100 active" data-copy=".btnSecondary(100)">Button 100</button>
+        <button class="example100 disabled">Button 100</button>
+      </p>
+      <p>
+        200 (13px) <button class="example200" data-copy=".btnSecondary(200)">Button 200</button>
+        <button class="example200 active" data-copy=".btnSecondary(200)">Button 200</button>
+        <button class="example200 disabled">Button 200</button>
+      </p>
+      <p>
+        300 (14px) <button class="example300" data-copy=".btnSecondary(300)">Button 300</button>
+        <button class="example300 active" data-copy=".btnSecondary(300)">Button 300</button>
+        <button class="example300 disabled">Button 300</button>
+      </p>
+      <p>
+        400 (15px) <button class="example400" data-copy=".btnSecondary(400)">Button 400</button>
+        <button class="example400 active" data-copy=".btnSecondary(400)">Button 400</button>
+        <button class="example400 disabled">Button 400</button>
+      </p>
+      <p>
+        500 (16px) <button class="example500" data-copy=".btnSecondary(500)">Button 500</button>
+        <button class="example500 active" data-copy=".btnSecondary(500)">Button 500</button>
+        <button class="example500 disabled">Button 500</button>
+      </p>
+      <p>
+        600 (17px) <button class="example600" data-copy=".btnSecondary(600)">Button 600</button>
+        <button class="example600 active" data-copy=".btnSecondary(600)">Button 600</button>
+        <button class="example600 disabled">Button 600</button>
+      </p>
+    </div>
+
+    @less
+    .example {
+      .btnSecondary();
+    }
+
+    .exampleIcon {
+      .btnSecondary(500, @fa-plus-circle);
+    }
+
+    .exampleIconleft {
+      .btnSecondary(500, @fa-plus-circle, 'left');
+    }
+
+    .exampleIconafter {
+      .btnSecondary(500, @fa-plus-circle, 'after');
+    }
+
+    .exampleIconright {
+      .btnSecondary(500, @fa-plus-circle, 'right');
+    }
+
+    .example100 {
+      .btnSecondary(100);
+    }
+
+    .example200 {
+      .btnSecondary(200);
+    }
+
+    .example300 {
+      .btnSecondary(300);
+    }
+
+    .example400 {
+      .btnSecondary(400);
+    }
+
+    .example500 {
+      .btnSecondary(500);
+    }
+
+    .example600 {
+      .btnSecondary(600);
+    }
+
+  @section ui.buttons
+*/
+/**
+Button Regular:
+`.btnRegular(@size)` - Regular CTA button.
+
+    @example
+    <p>
+      <button class="example" data-copy=".btnRegular()">Button Text</button>
+      <button class="example active" data-copy=".btnRegular()">Button Text</button>
+      <button class="example disabled">Button Text</button>
+    </p>
+    <p>
+      <button class="exampleIcon" data-copy=".btnRegular(500, @fa-plus-circle)">Button Text</button>
+      <button class="exampleIconleft" data-copy=".btnRegular(500, @fa-plus-circle, 'left')">Button Text</button>
+      <button class="exampleIconafter" data-copy=".btnRegular(500, @fa-plus-circle, 'after')">Button Text</button>
+      <button class="exampleIconright" data-copy=".btnRegular(500, @fa-plus-circle, 'right')">Button Text</button>
+    </p>
+
+    <div class="more">
+      <p>
+        100 (13px) <button class="example100" data-copy=".btnRegular(100)">Button 100</button>
+        <button class="example100 active" data-copy=".btnRegular(100)">Button 100</button>
+        <button class="example100 disabled">Button 100</button>
+      </p>
+      <p>
+        200 (13px) <button class="example200" data-copy=".btnRegular(200)">Button 200</button>
+        <button class="example200 active" data-copy=".btnRegular(200)">Button 200</button>
+        <button class="example200 disabled">Button 200</button>
+      </p>
+      <p>
+        300 (14px) <button class="example300" data-copy=".btnRegular(300)">Button 300</button>
+        <button class="example300 active" data-copy=".btnRegular(300)">Button 300</button>
+        <button class="example300 disabled">Button 300</button>
+      </p>
+      <p>
+        400 (15px) <button class="example400" data-copy=".btnRegular(400)">Button 400</button>
+        <button class="example400 active" data-copy=".btnRegular(400)">Button 400</button>
+        <button class="example400 disabled">Button 400</button>
+      </p>
+      <p>
+        500 (16px) <button class="example500" data-copy=".btnRegular(500)">Button 500</button>
+        <button class="example500 active" data-copy=".btnRegular(500)">Button 500</button>
+        <button class="example500 disabled">Button 500</button>
+      </p>
+      <p>
+        600 (17px) <button class="example600" data-copy=".btnRegular(600)">Button 600</button>
+        <button class="example600 active" data-copy=".btnRegular(600)">Button 600</button>
+        <button class="example600 disabled">Button 600</button>
+      </p>
+    </div>
+
+    @less
+    .example {
+      .btnRegular();
+    }
+
+    .exampleIcon {
+      .btnRegular(500, @fa-plus-circle);
+    }
+
+    .exampleIconleft {
+      .btnRegular(500, @fa-plus-circle, 'left');
+    }
+
+    .exampleIconafter {
+      .btnRegular(500, @fa-plus-circle, 'after');
+    }
+
+    .exampleIconright {
+      .btnRegular(500, @fa-plus-circle, 'right');
+    }
+
+    .example100 {
+      .btnRegular(100);
+    }
+
+    .example200 {
+      .btnRegular(200);
+    }
+
+    .example300 {
+      .btnRegular(300);
+    }
+
+    .example400 {
+      .btnRegular(400);
+    }
+
+    .example500 {
+      .btnRegular(500);
+    }
+
+    .example600 {
+      .btnRegular(600);
+    }
+
+  @section ui.buttons
+*/
+/**
+Button RegularAlt:
+`.btnRegularAlt(@size)` - RegularAlt CTA button.
+
+    @example
+    <p>
+      <button class="example" data-copy=".btnRegularAlt()">Button Text</button>
+      <button class="example active" data-copy=".btnRegularAlt()">Button Text</button>
+      <button class="example disabled">Button Text</button>
+    </p>
+    <p>
+      <button class="exampleIcon" data-copy=".btnRegularAlt(500, @fa-plus-circle)">Button Text</button>
+      <button class="exampleIconleft" data-copy=".btnRegularAlt(500, @fa-plus-circle, 'left')">Button Text</button>
+      <button class="exampleIconafter" data-copy=".btnRegularAlt(500, @fa-plus-circle, 'after')">Button Text</button>
+      <button class="exampleIconright" data-copy=".btnRegularAlt(500, @fa-plus-circle, 'right')">Button Text</button>
+    </p>
+
+    <div class="more">
+      <p>
+        100 (13px) <button class="example100" data-copy=".btnRegularAlt(100)">Button 100</button>
+        <button class="example100 active" data-copy=".btnRegularAlt(100)">Button 100</button>
+        <button class="example100 disabled">Button 100</button>
+      </p>
+      <p>
+        200 (13px) <button class="example200" data-copy=".btnRegularAlt(200)">Button 200</button>
+        <button class="example200 active" data-copy=".btnRegularAlt(200)">Button 200</button>
+        <button class="example200 disabled">Button 200</button>
+      </p>
+      <p>
+        300 (14px) <button class="example300" data-copy=".btnRegularAlt(300)">Button 300</button>
+        <button class="example300 active" data-copy=".btnRegularAlt(300)">Button 300</button>
+        <button class="example300 disabled">Button 300</button>
+      </p>
+      <p>
+        400 (15px) <button class="example400" data-copy=".btnRegularAlt(400)">Button 400</button>
+        <button class="example400 active" data-copy=".btnRegularAlt(400)">Button 400</button>
+        <button class="example400 disabled">Button 400</button>
+      </p>
+      <p>
+        500 (16px) <button class="example500" data-copy=".btnRegularAlt(500)">Button 500</button>
+        <button class="example500 active" data-copy=".btnRegularAlt(500)">Button 500</button>
+        <button class="example500 disabled">Button 500</button>
+      </p>
+      <p>
+        600 (17px) <button class="example600" data-copy=".btnRegularAlt(600)">Button 600</button>
+        <button class="example600 active" data-copy=".btnRegularAlt(600)">Button 600</button>
+        <button class="example600 disabled">Button 600</button>
+      </p>
+    </div>
+
+    @less
+    .example {
+      .btnRegularAlt();
+    }
+
+    .exampleIcon {
+      .btnRegularAlt(500, @fa-plus-circle);
+    }
+
+    .exampleIconleft {
+      .btnRegularAlt(500, @fa-plus-circle, 'left');
+    }
+
+    .exampleIconafter {
+      .btnRegularAlt(500, @fa-plus-circle, 'after');
+    }
+
+    .exampleIconright {
+      .btnRegularAlt(500, @fa-plus-circle, 'right');
+    }
+
+    .example100 {
+      .btnRegularAlt(100);
+    }
+
+    .example200 {
+      .btnRegularAlt(200);
+    }
+
+    .example300 {
+      .btnRegularAlt(300);
+    }
+
+    .example400 {
+      .btnRegularAlt(400);
+    }
+
+    .example500 {
+      .btnRegularAlt(500);
+    }
+
+    .example600 {
+      .btnRegularAlt(600);
+    }
+
+  @section ui.buttons
+*/
+/**
+Button Danger:
+`.btnDanger(@size)` - Danger CTA button.
+
+    @example
+    <p>
+      <button class="example" data-copy=".btnDanger()">Button Text</button>
+      <button class="example active" data-copy=".btnDanger()">Button Text</button>
+      <button class="example disabled">Button Text</button>
+    </p>
+    <p>
+      <button class="exampleIcon" data-copy=".btnDanger(500, @fa-plus-circle)">Button Text</button>
+      <button class="exampleIconleft" data-copy=".btnDanger(500, @fa-plus-circle, 'left')">Button Text</button>
+      <button class="exampleIconafter" data-copy=".btnDanger(500, @fa-plus-circle, 'after')">Button Text</button>
+      <button class="exampleIconright" data-copy=".btnDanger(500, @fa-plus-circle, 'right')">Button Text</button>
+    </p>
+
+    <div class="more">
+      <p>
+        100 (13px) <button class="example100" data-copy=".btnDanger(100)">Button 100</button>
+        <button class="example100 active" data-copy=".btnDanger(100)">Button 100</button>
+        <button class="example100 disabled">Button 100</button>
+      </p>
+      <p>
+        200 (13px) <button class="example200" data-copy=".btnDanger(200)">Button 200</button>
+        <button class="example200 active" data-copy=".btnDanger(200)">Button 200</button>
+        <button class="example200 disabled">Button 200</button>
+      </p>
+      <p>
+        300 (14px) <button class="example300" data-copy=".btnDanger(300)">Button 300</button>
+        <button class="example300 active" data-copy=".btnDanger(300)">Button 300</button>
+        <button class="example300 disabled">Button 300</button>
+      </p>
+      <p>
+        400 (15px) <button class="example400" data-copy=".btnDanger(400)">Button 400</button>
+        <button class="example400 active" data-copy=".btnDanger(400)">Button 400</button>
+        <button class="example400 disabled">Button 400</button>
+      </p>
+      <p>
+        500 (16px) <button class="example500" data-copy=".btnDanger(500)">Button 500</button>
+        <button class="example500 active" data-copy=".btnDanger(500)">Button 500</button>
+        <button class="example500 disabled">Button 500</button>
+      </p>
+      <p>
+        600 (17px) <button class="example600" data-copy=".btnDanger(600)">Button 600</button>
+        <button class="example600 active" data-copy=".btnDanger(600)">Button 600</button>
+        <button class="example600 disabled">Button 600</button>
+      </p>
+    </div>
+
+    @less
+    .example {
+      .btnDanger();
+    }
+
+    .exampleIcon {
+      .btnDanger(500, @fa-plus-circle);
+    }
+
+    .exampleIconleft {
+      .btnDanger(500, @fa-plus-circle, 'left');
+    }
+
+    .exampleIconafter {
+      .btnDanger(500, @fa-plus-circle, 'after');
+    }
+
+    .exampleIconright {
+      .btnDanger(500, @fa-plus-circle, 'right');
+    }
+
+    .example100 {
+      .btnDanger(100);
+    }
+
+    .example200 {
+      .btnDanger(200);
+    }
+
+    .example300 {
+      .btnDanger(300);
+    }
+
+    .example400 {
+      .btnDanger(400);
+    }
+
+    .example500 {
+      .btnDanger(500);
+    }
+
+    .example600 {
+      .btnDanger(600);
+    }
+
+  @section ui.buttons
+*/
+/**
+Button Brand:
+`.btnBrand(@background_color; @size)` - Brand CTA button.
+
+    @example
+    <p>
+      <button class="example" data-copy=".btnBrand(@linkedin)">Button Text</button>
+      <button class="example active" data-copy=".btnBrand(@linkedin)">Button Text</button>
+      <button class="example disabled">Button Text</button>
+    </p>
+    <p>
+      <button class="exampleIcon" data-copy=".btnBrand(@linkedin, 500, @fa-plus-circle)">Button Text</button>
+      <button class="exampleIconleft" data-copy=".btnBrand(@linkedin, 500, @fa-plus-circle, 'left')">Button Text</button>
+      <button class="exampleIconafter" data-copy=".btnBrand(@linkedin, 500, @fa-plus-circle, 'after')">Button Text</button>
+      <button class="exampleIconright" data-copy=".btnBrand(@linkedin, 500, @fa-plus-circle, 'right')">Button Text</button>
+    </p>
+
+    <div class="more">
+      <p>
+        100 (13px) <button class="example100" data-copy=".btnBrand(@facebook, 100)">Button 100</button>
+        <button class="example100 active" data-copy=".btnBrand(@facebook, 100)">Button 100</button>
+        <button class="example100 disabled">Button 100</button>
+      </p>
+      <p>
+        200 (13px) <button class="example200" data-copy=".btnBrand(@google, 200)">Button 200</button>
+        <button class="example200 active" data-copy=".btnBrand(@google, 200)">Button 200</button>
+        <button class="example200 disabled">Button 200</button>
+      </p>
+      <p>
+        300 (14px) <button class="example300" data-copy=".btnBrand(@twitter, 300)">Button 300</button>
+        <button class="example300 active" data-copy=".btnBrand(@twitter, 300)">Button 300</button>
+        <button class="example300 disabled">Button 300</button>
+      </p>
+      <p>
+        400 (15px) <button class="example400" data-copy=".btnBrand(@dropBoxBlue, 400)">Button 400</button>
+        <button class="example400 active" data-copy=".btnBrand(@dropBoxBlue, 400)">Button 400</button>
+        <button class="example400 disabled">Button 400</button>
+      </p>
+      <p>
+        500 (16px) <button class="example500" data-copy=".btnBrand(@facebook, 500)">Button 500</button>
+        <button class="example500 active" data-copy=".btnBrand(@facebook, 500)">Button 500</button>
+        <button class="example500 disabled">Button 500</button>
+      </p>
+      <p>
+        600 (17px) <button class="example600" data-copy=".btnBrand(@google, 600)">Button 600</button>
+        <button class="example600 active" data-copy=".btnBrand(@google, 600)">Button 600</button>
+        <button class="example600 disabled">Button 600</button>
+      </p>
+    </div>
+
+    @less
+    .example {
+      .btnBrand(@linkedin);
+    }
+
+    .exampleIcon {
+      .btnBrand(@linkedin, 500, @fa-plus-circle);
+    }
+
+    .exampleIconleft {
+      .btnBrand(@linkedin, 500, @fa-plus-circle, 'left');
+    }
+
+    .exampleIconafter {
+      .btnBrand(@linkedin, 500, @fa-plus-circle, 'after');
+    }
+
+    .exampleIconright {
+      .btnBrand(@linkedin, 500, @fa-plus-circle, 'right');
+    }
+
+    .example100 {
+      .btnBrand(@facebook, 100);
+    }
+
+    .example200 {
+      .btnBrand(@google, 200);
+    }
+
+    .example300 {
+      .btnBrand(@twitter, 300);
+    }
+
+    .example400 {
+      .btnBrand(@dropBoxBlue, 400);
+    }
+
+    .example500 {
+      .btnBrand(@facebook, 500);
+    }
+
+    .example600 {
+      .btnBrand(@google, 600);
+    }
+
+  @section ui.buttons
+*/
+/**
+Button AlertInfo:
+`.btnAlertInfo(@size)` - AlertInfo CTA button.
+
+    @example
+    <div class="examples">
+      <p>
+        <button class="example" data-copy=".btnAlertInfo()">Button Text</button>
+        <button class="example active" data-copy=".btnAlertInfo()">Button Text</button>
+        <button class="example disabled">Button Text</button>
+      </p>
+      <p>
+        <button class="exampleIcon" data-copy=".btnAlertInfo(500, @fa-plus-circle)">Button Text</button>
+        <button class="exampleIconleft" data-copy=".btnAlertInfo(500, @fa-plus-circle, 'left')">Button Text</button>
+        <button class="exampleIconafter" data-copy=".btnAlertInfo(500, @fa-plus-circle, 'after')">Button Text</button>
+        <button class="exampleIconright" data-copy=".btnAlertInfo(500, @fa-plus-circle, 'right')">Button Text</button>
+      </p>
+
+      <div class="more">
+        <p>
+          100 (13px) <button class="example100" data-copy=".btnAlertInfo(100)">Button 100</button>
+          <button class="example100 active" data-copy=".btnAlertInfo(100)">Button 100</button>
+          <button class="example100 disabled">Button 100</button>
+        </p>
+        <p>
+          200 (13px) <button class="example200" data-copy=".btnAlertInfo(200)">Button 200</button>
+          <button class="example200 active" data-copy=".btnAlertInfo(200)">Button 200</button>
+          <button class="example200 disabled">Button 200</button>
+        </p>
+        <p>
+          300 (14px) <button class="example300" data-copy=".btnAlertInfo(300)">Button 300</button>
+          <button class="example300 active" data-copy=".btnAlertInfo(300)">Button 300</button>
+          <button class="example300 disabled">Button 300</button>
+        </p>
+        <p>
+          400 (15px) <button class="example400" data-copy=".btnAlertInfo(400)">Button 400</button>
+          <button class="example400 active" data-copy=".btnAlertInfo(400)">Button 400</button>
+          <button class="example400 disabled">Button 400</button>
+        </p>
+        <p>
+          500 (16px) <button class="example500" data-copy=".btnAlertInfo(500)">Button 500</button>
+          <button class="example500 active" data-copy=".btnAlertInfo(500)">Button 500</button>
+          <button class="example500 disabled">Button 500</button>
+        </p>
+        <p>
+          600 (17px) <button class="example600" data-copy=".btnAlertInfo(600)">Button 600</button>
+          <button class="example600 active" data-copy=".btnAlertInfo(600)">Button 600</button>
+          <button class="example600 disabled">Button 600</button>
+        </p>
+      </div>
+    </div>
+
+    @less
+    .example {
+      .btnAlertInfo();
+    }
+
+    .exampleIcon {
+      .btnAlertInfo(500, @fa-plus-circle);
+    }
+
+    .exampleIconleft {
+      .btnAlertInfo(500, @fa-plus-circle, 'left');
+    }
+
+    .exampleIconafter {
+      .btnAlertInfo(500, @fa-plus-circle, 'after');
+    }
+
+    .exampleIconright {
+      .btnAlertInfo(500, @fa-plus-circle, 'right');
+    }
+
+    .example100 {
+      .btnAlertInfo(100);
+    }
+
+    .example200 {
+      .btnAlertInfo(200);
+    }
+
+    .example300 {
+      .btnAlertInfo(300);
+    }
+
+    .example400 {
+      .btnAlertInfo(400);
+    }
+
+    .example500 {
+      .btnAlertInfo(500);
+    }
+
+    .example600 {
+      .btnAlertInfo(600);
+    }
+
+    .examples {
+    }
+
+  @section ui.buttons
+*/
+/**
+Button AlertDanger:
+`.btnAlertDanger(@size)` - AlertDanger CTA button.
+
+    @example
+    <div class="examples">
+      <p>
+        <button class="example" data-copy=".btnAlertDanger()">Button Text</button>
+        <button class="example active" data-copy=".btnAlertDanger()">Button Text</button>
+        <button class="example disabled">Button Text</button>
+      </p>
+      <p>
+        <button class="exampleIcon" data-copy=".btnAlertDanger(500, @fa-plus-circle)">Button Text</button>
+        <button class="exampleIconleft" data-copy=".btnAlertDanger(500, @fa-plus-circle, 'left')">Button Text</button>
+        <button class="exampleIconafter" data-copy=".btnAlertDanger(500, @fa-plus-circle, 'after')">Button Text</button>
+        <button class="exampleIconright" data-copy=".btnAlertDanger(500, @fa-plus-circle, 'right')">Button Text</button>
+      </p>
+
+      <div class="more">
+        <p>
+          100 (13px) <button class="example100" data-copy=".btnAlertDanger(100)">Button 100</button>
+          <button class="example100 active" data-copy=".btnAlertDanger(100)">Button 100</button>
+          <button class="example100 disabled">Button 100</button>
+        </p>
+        <p>
+          200 (13px) <button class="example200" data-copy=".btnAlertDanger(200)">Button 200</button>
+          <button class="example200 active" data-copy=".btnAlertDanger(200)">Button 200</button>
+          <button class="example200 disabled">Button 200</button>
+        </p>
+        <p>
+          300 (14px) <button class="example300" data-copy=".btnAlertDanger(300)">Button 300</button>
+          <button class="example300 active" data-copy=".btnAlertDanger(300)">Button 300</button>
+          <button class="example300 disabled">Button 300</button>
+        </p>
+        <p>
+          400 (15px) <button class="example400" data-copy=".btnAlertDanger(400)">Button 400</button>
+          <button class="example400 active" data-copy=".btnAlertDanger(400)">Button 400</button>
+          <button class="example400 disabled">Button 400</button>
+        </p>
+        <p>
+          500 (16px) <button class="example500" data-copy=".btnAlertDanger(500)">Button 500</button>
+          <button class="example500 active" data-copy=".btnAlertDanger(500)">Button 500</button>
+          <button class="example500 disabled">Button 500</button>
+        </p>
+        <p>
+          600 (17px) <button class="example600" data-copy=".btnAlertDanger(600)">Button 600</button>
+          <button class="example600 active" data-copy=".btnAlertDanger(600)">Button 600</button>
+          <button class="example600 disabled">Button 600</button>
+        </p>
+      </div>
+    </div>
+
+    @less
+    .example {
+      .btnAlertDanger();
+    }
+
+    .exampleIcon {
+      .btnAlertDanger(500, @fa-plus-circle);
+    }
+
+    .exampleIconleft {
+      .btnAlertDanger(500, @fa-plus-circle, 'left');
+    }
+
+    .exampleIconafter {
+      .btnAlertDanger(500, @fa-plus-circle, 'after');
+    }
+
+    .exampleIconright {
+      .btnAlertDanger(500, @fa-plus-circle, 'right');
+    }
+
+    .example100 {
+      .btnAlertDanger(100);
+    }
+
+    .example200 {
+      .btnAlertDanger(200);
+    }
+
+    .example300 {
+      .btnAlertDanger(300);
+    }
+
+    .example400 {
+      .btnAlertDanger(400);
+    }
+
+    .example500 {
+      .btnAlertDanger(500);
+    }
+
+    .example600 {
+      .btnAlertDanger(600);
+    }
+
+    .examples {
+    }
+
+  @section ui.buttons
+*/
+/**
+Button TipCallout:
+`.btnTipCallout(@size)` - TipCallout CTA button, used inside of callouts.
+
+    @example
+    <div class="examples">
+      <p>
+        <button class="example" data-copy=".btnTipCallout()">Button Text</button>
+        <button class="example active" data-copy=".btnTipCallout()">Button Text</button>
+        <button class="example disabled">Button Text</button>
+      </p>
+      <p>
+        <button class="exampleIcon" data-copy=".btnTipCallout(500, @fa-plus-circle)">Button Text</button>
+        <button class="exampleIconleft" data-copy=".btnTipCallout(500, @fa-plus-circle, 'left')">Button Text</button>
+        <button class="exampleIconafter" data-copy=".btnTipCallout(500, @fa-plus-circle, 'after')">Button Text</button>
+        <button class="exampleIconright" data-copy=".btnTipCallout(500, @fa-plus-circle, 'right')">Button Text</button>
+      </p>
+
+      <div class="more">
+        <p>
+          100 (13px) <button class="example100" data-copy=".btnTipCallout(100)">Button 100</button>
+          <button class="example100 active" data-copy=".btnTipCallout(100)">Button 100</button>
+          <button class="example100 disabled">Button 100</button>
+        </p>
+        <p>
+          200 (13px) <button class="example200" data-copy=".btnTipCallout(200)">Button 200</button>
+          <button class="example200 active" data-copy=".btnTipCallout(200)">Button 200</button>
+          <button class="example200 disabled">Button 200</button>
+        </p>
+        <p>
+          300 (14px) <button class="example300" data-copy=".btnTipCallout(300)">Button 300</button>
+          <button class="example300 active" data-copy=".btnTipCallout(300)">Button 300</button>
+          <button class="example300 disabled">Button 300</button>
+        </p>
+        <p>
+          400 (15px) <button class="example400" data-copy=".btnTipCallout(400)">Button 400</button>
+          <button class="example400 active" data-copy=".btnTipCallout(400)">Button 400</button>
+          <button class="example400 disabled">Button 400</button>
+        </p>
+        <p>
+          500 (16px) <button class="example500" data-copy=".btnTipCallout(500)">Button 500</button>
+          <button class="example500 active" data-copy=".btnTipCallout(500)">Button 500</button>
+          <button class="example500 disabled">Button 500</button>
+        </p>
+        <p>
+          600 (17px) <button class="example600" data-copy=".btnTipCallout(600)">Button 600</button>
+          <button class="example600 active" data-copy=".btnTipCallout(600)">Button 600</button>
+          <button class="example600 disabled">Button 600</button>
+        </p>
+      </div>
+    </div>
+
+    @less
+    .example {
+      .btnTipCallout();
+    }
+
+    .exampleIcon {
+      .btnTipCallout(500, @fa-plus-circle);
+    }
+
+    .exampleIconleft {
+      .btnTipCallout(500, @fa-plus-circle, 'left');
+    }
+
+    .exampleIconafter {
+      .btnTipCallout(500, @fa-plus-circle, 'after');
+    }
+
+    .exampleIconright {
+      .btnTipCallout(500, @fa-plus-circle, 'right');
+    }
+
+    .example100 {
+      .btnTipCallout(100);
+    }
+
+    .example200 {
+      .btnTipCallout(200);
+    }
+
+    .example300 {
+      .btnTipCallout(300);
+    }
+
+    .example400 {
+      .btnTipCallout(400);
+    }
+
+    .example500 {
+      .btnTipCallout(500);
+    }
+
+    .example600 {
+      .btnTipCallout(600);
+    }
+
+    .examples {
+      background: @blue09;
+      padding: 10px;
+      color: #fff;
+      border-radius: 6px;
+
+      .hide {
+        color: #fff;
+      }
+    }
+
+  @section ui.buttons
+*/
+/**
+Get Recruited:
+`.btnGetRecruited(@size)` - Get Recruited brand CTA.
+
+    @example
+    <p>
+      <button class="example" data-copy=".btnGetRecruited()">Button Text</button>
+      <button class="example active" data-copy=".btnGetRecruited()">Button Text</button>
+      <button class="example disabled">Button Text</button>
+    </p>
+    <p>
+      <button class="exampleIcon" data-copy=".btnGetRecruited(500, @fa-plus-circle)">Button Text</button>
+      <button class="exampleIconleft" data-copy=".btnGetRecruited(500, @fa-plus-circle, 'left')">Button Text</button>
+      <button class="exampleIconafter" data-copy=".btnGetRecruited(500, @fa-plus-circle, 'after')">Button Text</button>
+      <button class="exampleIconright" data-copy=".btnGetRecruited(500, @fa-plus-circle, 'right')">Button Text</button>
+    </p>
+
+    <div class="more">
+      <p>
+        100 (13px) <button class="example100" data-copy=".btnGetRecruited(100)">Button 100</button>
+        <button class="example100 active" data-copy=".btnGetRecruited(100)">Button 100</button>
+        <button class="example100 disabled">Button 100</button>
+      </p>
+      <p>
+        200 (13px) <button class="example200" data-copy=".btnGetRecruited(200)">Button 200</button>
+        <button class="example200 active" data-copy=".btnGetRecruited(200)">Button 200</button>
+        <button class="example200 disabled">Button 200</button>
+      </p>
+      <p>
+        300 (14px) <button class="example300" data-copy=".btnGetRecruited(300)">Button 300</button>
+        <button class="example300 active" data-copy=".btnGetRecruited(300)">Button 300</button>
+        <button class="example300 disabled">Button 300</button>
+      </p>
+      <p>
+        400 (15px) <button class="example400" data-copy=".btnGetRecruited(400)">Button 400</button>
+        <button class="example400 active" data-copy=".btnGetRecruited(400)">Button 400</button>
+        <button class="example400 disabled">Button 400</button>
+      </p>
+      <p>
+        500 (16px) <button class="example500" data-copy=".btnGetRecruited(500)">Button 500</button>
+        <button class="example500 active" data-copy=".btnGetRecruited(500)">Button 500</button>
+        <button class="example500 disabled">Button 500</button>
+      </p>
+      <p>
+        600 (17px) <button class="example600" data-copy=".btnGetRecruited(600)">Button 600</button>
+        <button class="example600 active" data-copy=".btnGetRecruited(600)">Button 600</button>
+        <button class="example600 disabled">Button 600</button>
+      </p>
+    </div>
+
+    @less
+    .example {
+      .btnGetRecruited();
+    }
+
+    .exampleIcon {
+      .btnGetRecruited(500, @fa-plus-circle);
+    }
+
+    .exampleIconleft {
+      .btnGetRecruited(500, @fa-plus-circle, 'left');
+    }
+
+    .exampleIconafter {
+      .btnGetRecruited(500, @fa-plus-circle, 'after');
+    }
+
+    .exampleIconright {
+      .btnGetRecruited(500, @fa-plus-circle, 'right');
+    }
+
+    .example100 {
+      .btnGetRecruited(100);
+    }
+
+    .example200 {
+      .btnGetRecruited(200);
+    }
+
+    .example300 {
+      .btnGetRecruited(300);
+    }
+
+    .example400 {
+      .btnGetRecruited(400);
+    }
+
+    .example500 {
+      .btnGetRecruited(500);
+    }
+
+    .example600 {
+      .btnGetRecruited(600);
+    }
+
+  @section ui.buttons
+*/
+/**
+Google Signin Button:
+`.buttonGoogleSignin()` - Button with Google logo.
+
+    @example
+    <button class="example" data-copy=".buttonGoogleSignin()">Button Text</button>
+    <button class="example active" data-copy=".buttonGoogleSignin()">Button Text</button>
+    <button class="example disabled">Button Text</button>
+
+    <div class="more">
+      <p>
+        100 (13px) <button class="example100" data-copy=".buttonGoogleSignin(100)">Button 100</button>
+        <button class="example100 active" data-copy=".buttonGoogleSignin(100)">Button 100</button>
+        <button class="example100 disabled">Button 100</button>
+      </p>
+      <p>
+        200 (13px) <button class="example200" data-copy=".buttonGoogleSignin(200)">Button 200</button>
+        <button class="example200 active" data-copy=".buttonGoogleSignin(200)">Button 200</button>
+        <button class="example200 disabled">Button 200</button>
+      </p>
+      <p>
+        300 (14px) <button class="example300" data-copy=".buttonGoogleSignin(300)">Button 300</button>
+        <button class="example300 active" data-copy=".buttonGoogleSignin(300)">Button 300</button>
+        <button class="example300 disabled">Button 300</button>
+      </p>
+      <p>
+        400 (15px) <button class="example400" data-copy=".buttonGoogleSignin(400)">Button 400</button>
+        <button class="example400 active" data-copy=".buttonGoogleSignin(400)">Button 400</button>
+        <button class="example400 disabled">Button 400</button>
+      </p>
+      <p>
+        500 (16px) <button class="example500" data-copy=".buttonGoogleSignin(500)">Button 500</button>
+        <button class="example500 active" data-copy=".buttonGoogleSignin(500)">Button 500</button>
+        <button class="example500 disabled">Button 500</button>
+      </p>
+      <p>
+        600 (17px) <button class="example600" data-copy=".buttonGoogleSignin(600)">Button 600</button>
+        <button class="example600 active" data-copy=".buttonGoogleSignin(600)">Button 600</button>
+        <button class="example600 disabled">Button 600</button>
+      </p>
+    </div>
+
+    @less
+    .example {
+      .buttonGoogleSignin();
+    }
+
+    .example100 {
+      .buttonGoogleSignin(100);
+    }
+
+    .example200 {
+      .buttonGoogleSignin(200);
+    }
+
+    .example300 {
+      .buttonGoogleSignin(300);
+    }
+
+    .example400 {
+      .buttonGoogleSignin(400);
+    }
+
+    .example500 {
+      .buttonGoogleSignin(500);
+    }
+
+    .example600 {
+      .buttonGoogleSignin(600);
+    }
+
+  @section ui.buttons
+*/
+/**
+Button Link:
+`.buttonLink()` - Behaves like a button but looks like a link for design purposes.
+
+    @example
+    <button type="button" class="example">Button Text</button>
+
+    @less
+    .example {
+      .buttonLink();
+    }
+
+  @section ui.buttons
+*/
+/**
+Combo Button:
+`.combo-button()` - Converts any button into one that can be combined with a text input
+
+    @example
+    <p><button type="button" class="example1">Button Text</button></p>
+    <p><button type="button" class="example2">Button Text</button></p>
+    <p><button type="button" class="example3">Button Text</button></p>
+
+    @less
+    .example1 {
+      .btnPrimary(300);
+      .combo-button();
+    }
+    .example2 {
+      .btnRegular(300);
+      .combo-button();
+    }
+    .example3 {
+      .btnRegularAlt(300);
+      .combo-button();
+    }
+
+  @section ui.buttons
+*/
+/**
+Icon Button:
+`.iconButton()` - Gives an element a `::before` pseudo element and styles the look. Note: Does not style positioning.
+
+    @example
+    <p>
+      Default button:
+      <button class="example">
+        Icon description text
+      </button>
+      <br>
+      Note: If no hover color is provided, the initial opacity will be .5, and set to 1 when hovered
+    </p>
+
+    <p>
+      Custom button settings:
+      <button class="example2">
+        Icon description text 2
+      </button>
+    </p>
+
+    @less
+    .example {
+      .iconButton();
+    }
+
+    .example2 {
+      .iconButton(@fa-info-circle; @color: red; @hoverColor: @greenText; @fontSize: 20px);
+    }
+
+  @section ui.buttons
+*/
+/**
+Text Input:
+`.textInput()` - ZR style text inputs
+
+    @example
+    <p><input class="example" type="text" placeholder="Some Text"></p>
+    <p><input class="example" type="text" placeholder="Some Text" value="Some Text"></p>
+
+    <div class="more">
+      <p><input class="example400" type="text" placeholder="400" value="400"></p>
+      <p><input class="example700" type="text" placeholder="700" value="700"></p>
+    </div>
+
+    @less
+    .example {
+      .textInput();
+    }
+
+    .example400 {
+      .textInput(400);
+    }
+
+    .example700 {
+      .textInput(700);
+    }
+
+  @section ui.forms
+*/
+/**
+Input Focus:
+`.inputFocus()` - Focused state of an input. TODO: Get input styling in here.
+
+    @example
+    <input class="example">
+
+    @less
+    .example {
+      .inputFocus();
+    }
+
+  @section ui.forms
+*/
+/**
+Radio Buttons:
+`.radioButton()` - ZR style radio buttons
+
+    @example
+    <div class="example cms">
+      <p>
+        <input name="answer" type="radio" value="got_hired_ziprecruiter" id="answer_2" checked>
+        <label for="answer_2">ZipRecruiter</label>
+      </p>
+      <p>
+        <input name="answer" type="radio" value="got_hired" id="answer_1">
+        <label for="answer_1">Not sure</label>
+      </p>
+      <p>
+        <input name="answer" type="radio" value="not_got_hired" id="answer_3" disabled>
+        <label for="answer_3">Nope</label>
+      </p>
+    </div>
+
+    @less
+    .example input[type="radio"] {
+      .radioButton();
+    }
+
+  @section ui.forms
+*/
+/**
+Check Box:
+`.checkBox()` - ZR style check boxes. Note: the checkbox input has to be placed BEFORE the label element in the DOM for this css to work. You can get a similar layout on formfu using the 'layout:'.
+
+    @example
+    <div class="example cms">
+      <p>
+        <input name="check_1" type="checkbox" value="got_hired_ziprecruiter" id="check_1" checked>
+        <label for="check_1">ZipRecruiter</label>
+      </p>
+      <p>
+        <input name="check_2" type="checkbox" value="got_hired" id="check_2">
+        <label for="check_2">Not sure</label>
+      </p>
+      <p>
+        <input name="check_3" type="checkbox" value="got_hired_i_guess" id="check_3" indeterminate>
+        <label for="check_3">Really not sure</label>
+        <script>document.getElementById('check_3').indeterminate=true</script>
+      </p>
+      <p>
+        <input name="check_4" type="checkbox" value="not_got_hired" id="check_4" disabled>
+        <label for="check_4">Nope</label>
+      </p>
+    </div>
+
+    @less
+    .example input[type="checkbox"] {
+      .checkBox();
+    }
+
+  @section ui.forms
+*/
+/**
+radioButton Parent:
+`.radioButtonParent()` - Label styling for ZR style radioButtons to allow for better text wrapping.
+
+    @example
+    <div class="example">
+      <p>
+        <input name="check_thing_1" type="radio" value="foo" id="check_thing_1" checked>
+        <label for="check_thing_1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse velit magna, dapibus id urna in, malesuada imperdiet ligula. Sed commodo magna ut nunc varius, at tempor lorem porta. Duis pharetra nisi nulla, quis vehicula odio consequat ut. Ut ut gravida risus. </label>
+      </p>
+    </div>
+
+    @less
+    .example {
+      .radioButtonParent();
+    }
+
+  @section ui.forms
+*/
+/**
+checkBox Parent:
+`.checkBoxParent()` - Label styling for ZR style checkBoxes to allow for better text wrapping.
+
+    @example
+    <div class="example">
+      <p>
+        <input name="check_thing_1" type="checkbox" value="foo" id="check_thing_1" checked>
+        <label for="check_thing_1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse velit magna, dapibus id urna in, malesuada imperdiet ligula. Sed commodo magna ut nunc varius, at tempor lorem porta. Duis pharetra nisi nulla, quis vehicula odio consequat ut. Ut ut gravida risus. </label>
+      </p>
+    </div>
+
+    @less
+    .example {
+      .checkBoxParent();
+    }
+
+  @section ui.forms
+*/
+/**
+Tags:
+`.tag_item()` - Used as tags, badges and label-like things.
+
+    @example
+
+    <p class="note">Default tags:</p>
+
+    <span class="example">
+      Default Tag
+    </span>
+
+    <span class="example">
+      Tag with Remove <button class="tag_item_remove" title="Remove tag">Remove</button>
+    </span>
+
+    <span class="example">
+      Tag with Count <span class="count">23</span>
+    </span>
+
+    <span class="example verified_tag">
+      Verified Tag
+    </span>
+
+    <p class="note">Alternate tags:</p>
+
+    <span class="example marketing_tag">
+      Marketing Tag
+    </span>
+
+    <span class="example quiet_tag">
+      Quiet Tag
+    </span>
+
+    <span class="example quiet_tag">
+      Quiet Tag with Add <button class="tag_item_add" title="Add tag">Add</button>
+    </span>
+
+    <span class="example emphasized_tag">
+      Emphasized Tag
+    </span>
+
+    <span class="example promo_tag">
+      Promo Tag
+    </span>
+
+    <span class="example great_match_tag">
+      Great Match
+    </span>
+
+    <span class="example remote_tag">
+     Remote
+    </span>
+
+    <span class="example willing_to_train_tag">
+     Training Provided
+    </span>
+
+    <span class="example bonus_tag">
+      Signing Bonus
+    </span>
+
+    <span class="example veteran_tag">
+      Veteran-Friendly
+    </span>
+
+    <span class="example relocation_tag">
+      Relocation Assistance
+    </span>
+
+    <span class="example urgent_tag">
+      URGENT!
+    </span>
+
+    <span class="example education_tag">
+      Training Provided
+    </span>
+
+    @less
+    .note {
+      font-size: 13px;
+      margin: 10px 0;
+      font-weight: 700;
+    }
+
+    .example {
+      .tag_item(@margin: 0 4px 7px);
+      vertical-align: top;
+    }
+
+  @section ui.tags
+*/
+/**
+Spinner Loading Animation:
+`.spinner()` - Loading animation spinner.
+
+    @description
+    This mixin should only be used for making reusable components (template include, React component, etc)
+
+    [See ZRS for usage](/fedocs/zrs#zrs.spinner)
+
+    @example
+    <svg class="spinner" width="66px" height="66px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+        <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="25"></circle>
+    </svg>
+
+    @less
+    .spinner {
+      .spinner();
+    }
+
+  @section ui.other
+*/
+/**
+Visually Hidden:
+`.visuallyHidden()` - Hide from sighted users.
+
+    @example
+    <div class="john_cena">U Can't C Me</div>
+
+    @less
+    .john_cena {
+      .visuallyHidden();
+    }
+
+  @section utility
+*/
+/**
+Inverse Link:
+`.inverseLink()` - Links on dark backgrounds.
+
+    @example
+    <a href="#" class="example">Button Text</a>
+
+    @less
+    .example {
+      .inverseLink();
+    }
+
+  @section ui
+*/
+/**
+CTA Link:
+`.ctaLink()` - Links with cta color.
+
+    @example
+    <a href="#" class="example">Button Text</a>
+
+    @less
+    .example {
+      .ctaLink();
+    }
+
+  @section ui
+*/
+/* Split layout
+
+Usage:
+
+.split {
+  .split_group {
+    .splitGroup();
+
+    > * {
+      .splitGroupChildren();
+    }
+  }
+
+  .split_image {
+    .splitImage();
+  }
+}
+
+.split:nth-child(even) {
+  .split_text {
+    .splitTextAlt();
+  }
+}
+
+*/
+/**
+SVG backgrounds:
+`.svg()` - Properly escape SVG code and use as a background image.
+
+    @example
+    <button class="example">Button Text</button>
+
+    @less
+    .example {
+      .svg('<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="100"/>
+      </svg>');
+    }
+
+  @section utility
+*/
+/**
+Spin Icon Animation:
+`.spin()` - Smooth spinning.
+
+    @example
+    <span class="example">:)</span>
+
+    @less
+    .example {
+      position: absolute;
+      .spin();
+    }
+
+  @section utility
+*/
+/**
+Pulse Icon Animation:
+`.pulse()` - Smooth spinning.
+
+    @example
+    <span class="example">Loading</span>
+
+    @less
+    .example {
+      &:after {
+        position: absolute;
+        .fa-spinner();
+        .pulse();
+      }
+    }
+
+  @section utility
+*/
+/* ==========================================================================
+MIXIN FOR EASY ANIMATION PREFIXING
+========================================================================== */
+/* ==========================================================================
+ZR CSS FADE IN
+========================================================================== */
+/**
+Circle Cropper for Images:
+`.image_circle_cropper()` - Crops images to circles.
+
+    @example
+    <div class="example">
+      <img width="62" height="62" alt="" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSItNTAgLTUwIDEwMCAxMDAiPjxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjQiIGZpbGw9IiNmOTAiLz48cmVjdCB4PSItNTAiIHk9Ii01MCIgd2lkdGg9IjUwIiBoZWlnaHQ9IjUwIiByeD0iNCIgZmlsbD0iI2ZmYjEzYiIvPjxyZWN0IHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgcng9IjQiIGZpbGw9IiNkZTg1MDAiLz48dXNlIHN0cm9rZT0iI2Y5MCIgc3Ryb2tlLXdpZHRoPSIyMi42IiB4bGluazpocmVmPSIjYSIvPjxjaXJjbGUgcj0iMjYiLz48dXNlIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIxMiIgeGxpbms6aHJlZj0iI2EiLz48ZyBpZD0iYSI+PGcgaWQ9ImQiPjxnIGlkPSJjIj48Y2lyY2xlIGlkPSJiIiBjeT0iLTMxLjYiIHI9IjcuMSIgZmlsbD0iI2ZmZiIvPjxwYXRoIGQ9Ik0wIDMxLjZ2LTYzLjIiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxMCIvPjx1c2UgeT0iNjMuMiIgeGxpbms6aHJlZj0iI2IiLz48L2c+PHVzZSB0cmFuc2Zvcm09InJvdGF0ZSg5MCkiIHhsaW5rOmhyZWY9IiNjIi8+PC9nPjx1c2UgdHJhbnNmb3JtPSJyb3RhdGUoNDUpIiB4bGluazpocmVmPSIjZCIvPjwvZz48cGF0aCBkPSJNNDQuNyAwdjQwYzAgMy4zLTEuNyA1LTUgNWgtNzkuNGMtMy4zIDAtNS0xLjctNS01VjAiLz48cGF0aCBkPSJNMzYgNC4yYzMgMCA1LjMgMi40IDUuMyA1LjN2MThjLTI3LjYtMy40LTU1LTgtODItNy43VjkuNmMwLTMgMi40LTUuMyA1LjMtNS4zeiIgZmlsbD0iIzNmM2YzZiIvPjx1c2Ugc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjcuNCIgeGxpbms6aHJlZj0iI2UiLz48ZyBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iNi40Ij48ZyBpZD0iZSI+PHBhdGggZmlsbD0ibm9uZSIgZD0iTS0zMS43IDMxLjJhOC4zIDguMyAwIDEgMCA4LjItOC4zIDguMyA4LjMgMCAxIDEgOC4zLTguNU0yMy4yIDIzaDguM3Y4LjNhOC4zIDguMyAwIDAgMS0xNi41IDBWMTQuN2E4LjMgOC4zIDAgMCAxIDE2LjUgMCIvPjxnIHN0cm9rZS13aWR0aD0iLjUiIHN0cm9rZT0iIzAwMCI+PHBhdGggZD0iTTQuOCAzaDYuOEwzLjMgNDIuOGgtNi44TC0xMS44IDNoN0wwIDI2LjN6IiBmaWxsPSIjZmZmIi8+PHBhdGggZD0iTTIzLjIgMTkuNnY2LjhtNS0xMS43SDM1bS03MC4yIDE2LjVoN205LjUtMTYuNWg3IiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIi8+PC9nPjwvZz48L2c+PC9zdmc+">
+    </div>
+
+    @less
+    .example {
+      .image_circle_cropper();
+    }
+
+  @section utility
+*/
+/**
+Circle Cropper for Logos:
+`.logo_circle_cropper()` - Crops logos to circles.
+
+    @example
+    <div class="example">
+      <img width="62" height="62" src="https://s3.amazonaws.com/public-ziprecruiter/uploads/ccf4936f.jpeg" alt="">
+    </div>
+
+    @less
+    .example {
+      .logo_circle_cropper();
+    }
+
+  @section utility
+*/
+/**
+Button Font Stack:
+`.buttonFontStack()` - Font stylings on buttons. Note: These will probably already be set on your elements.
+
+    @example
+    <button class="example">
+      The quick brown fox jumps over the lazy dog
+    </button>
+
+    @less
+    .example {
+      .buttonFontStack();
+    }
+
+  @section ui.typography
+*/
+/**
+Header Font Stack:
+`.headerFontStack()` - Font stylings on headers. Note: These will probably already be set on your elements.
+
+    @example
+    <h1 class="example">
+      The quick brown fox jumps over the lazy dog
+    </h1>
+
+    @less
+    .example {
+      .headerFontStack();
+    }
+
+  @section ui.typography
+*/
+/**
+Body Font Stack:
+`.bodyFontStack()` - Font stylings on the body. Note: These will probably already be set on your elements.
+
+    @example
+    <p class="example">
+      The quick brown fox jumps over the lazy dog
+    </p>
+
+    @less
+    .example {
+      .bodyFontStack();
+    }
+
+  @section ui.typography
+*/
+/**
+Marketing Header Font Stack:
+`.marketingHeaderFontStack()` - Font stylings for the marketing header (Frank Ruhl Libre font). Note: You will need to link `/css/_marketing_header_font.less` in your template to use this mixin.
+
+    @example
+    link_css_file('/css/_marketing_header_font.less');
+    <p class="example">
+      The quick brown fox jumps over the lazy dog
+    </p>
+
+    @less
+    .example {
+      .marketingHeaderFontStack();
+    }
+
+  @section ui.typography
+*/
+/**
+Close Button:
+`.closeButton()` - Gives an element a `::before` pseudo element and styles the look. Note: Does not style positioning.
+
+    @example
+    <button class="example">
+      Click here to close something
+    </button>
+
+    @less
+    .example {
+      .closeButton();
+
+      position: absolute;
+    }
+
+  @section ui.buttons
+*/
+/**
+Success message:
+`.success_message()` - Success messages. Uses `.message()` base styling.
+
+    @example
+    <div class="example" data-thing="message">
+      <p>This is only <strong>a message</strong>. <a href="#">Link</a></p>
+      <button type="button" class="close_message" data-close="message">Close</button>
+    </div>
+
+    <div class="example has_icon" data-thing="message">
+      <p>This is only <strong>a message</strong>. <a href="#">Link</a></p>
+      <button type="button" class="close_message" data-close="message">Close</button>
+    </div>
+
+    <div class="example" data-thing="message">
+      <h3 class="message_header">I am a Header!</h3>
+      <p>This is only <strong>a message</strong>. <a href="#">Link</a></p>
+      <button type="button" class="close_message" data-close="message">Close</button>
+    </div>
+
+    @less
+    .example {
+      .success_message();
+    }
+
+  @section ui.feedback
+*/
+/**
+Info message:
+`.info_message()` - Info messages. Uses `.message()` base styling.
+
+    @example
+    <div class="example" data-thing="message">
+      <p>This is only <strong>a message</strong>. <a href="#">Link</a></p>
+      <button type="button" class="close_message" data-close="message">Close</button>
+    </div>
+
+    <div class="example has_icon" data-thing="message">
+      <p>This is only <strong>a message</strong>. <a href="#">Link</a></p>
+      <button type="button" class="close_message" data-close="message">Close</button>
+    </div>
+
+    <div class="example" data-thing="message">
+      <h3 class="message_header">I am a Header!</h3>
+      <p>This is only <strong>a message</strong>. <a href="#">Link</a></p>
+      <button type="button" class="close_message" data-close="message">Close</button>
+    </div>
+
+    @less
+    .example {
+      .info_message();
+    }
+
+  @section ui.feedback
+*/
+/**
+Alert message:
+`.alert_message()` - Alert messages. Uses `.message()` base styling.
+
+    @example
+    <div class="example" data-thing="message">
+      <p>This is only <strong>a message</strong>. <a href="#">Link</a></p>
+      <button type="button" class="close_message" data-close="message">Close</button>
+    </div>
+
+    <div class="example has_icon" data-thing="message">
+      <p>This is only <strong>a message</strong>. <a href="#">Link</a></p>
+      <button type="button" class="close_message" data-close="message">Close</button>
+    </div>
+
+    <div class="example" data-thing="message">
+      <h3 class="message_header">I am a Header!</h3>
+      <p>This is only <strong>a message</strong>. <a href="#">Link</a></p>
+      <button type="button" class="close_message" data-close="message">Close</button>
+    </div>
+
+    @less
+    .example {
+      .alert_message();
+    }
+
+  @section ui.feedback
+*/
+/**
+Danger message:
+`.danger_message()` - Danger messages. Uses `.message()` base styling.
+
+    @example
+    <div class="example" data-thing="message">
+      <p>This is only <strong>a message</strong>. <a href="#">Link</a></p>
+      <button type="button" class="close_message" data-close="message">Close</button>
+    </div>
+
+    <div class="example has_icon" data-thing="message">
+      <p>This is only <strong>a message</strong>. <a href="#">Link</a></p>
+      <button type="button" class="close_message" data-close="message">Close</button>
+    </div>
+
+    <div class="example" data-thing="message">
+      <h3 class="message_header">I am a Header!</h3>
+      <p>This is only <strong>a message</strong>. <a href="#">Link</a></p>
+      <button type="button" class="close_message" data-close="message">Close</button>
+    </div>
+
+    @less
+    .example {
+      .danger_message();
+    }
+
+  @section ui.feedback
+*/
+/**
+Tile message:
+`.tile_message()` - Tile style messages. Uses `.message()` base styling.
+
+    @example
+    <div class="example" data-thing="message">
+      <button type="button" class="close_message" data-close="message">Close</button>
+      <p>This is only <strong>a message</strong>. <a href="#">Link</a></p>
+    </div>
+
+    <div class="example has_icon" data-thing="message">
+      <button type="button" class="close_message" data-close="message">Close</button>
+      <p>This is only <strong>a message</strong>. <a href="#">Link</a></p>
+    </div>
+
+    <div class="example" data-thing="message">
+      <h3 class="message_header">I am a Header!</h3>
+      <p>This is only <strong>a message</strong>. <a href="#">Link</a></p>
+      <button type="button" class="close_message" data-close="message">Close</button>
+    </div>
+
+    @less
+    .example {
+      .tile_message();
+    }
+
+  @section ui.feedback
+*/
+/**
+Left-to-Right border fade:
+`.fade-border()` - Simulates a border that fades from left to right.
+
+    @description
+    TODO: Maybe use a border image with an SVG?
+
+    @example
+    <div class="example">
+      <p>Look below!</p>
+    </div>
+
+    @less
+    .example {
+      .fade-border();
+    }
+
+  @section ui
+*/
+/**
+Reset button styling:
+`.reset-button()` - Remove base styling from buttons.
+
+    @example
+    <button class="example">I'm a button that looks like text</button>
+
+    @less
+    .example {
+      .reset-button();
+    }
+
+  @section utility
+*/
+/**
+Visually hide text:
+`.hide-text()` - Hide text from sighted users.
+
+    @example
+    <button class="john_cena">U Can't C Me... again!</button>
+
+    @less
+    .john_cena {
+      .hide-text();
+    }
+
+  @section utility
+*/
+/**
+Clear fix hack:
+`.clear-fix()` - Standard clear fix hack.
+
+    @example
+    <div class="example">
+      <div style="float:left;">Floated element</div>
+    </div>
+
+    @less
+    .example {
+      .clear-fix();
+    }
+
+  @section utility
+*/
+/**
+Tile:
+`.tile()` - Standard tile.
+
+    @description
+    TODO: Default padding & param.
+
+    @example
+    <div class="example100" data-copy=".tile(100)">This is a <code>.tile(100)</code></div>
+    <br>
+    <div class="example200" data-copy=".tile(200)">This is a <code>.tile(200)</code></div>
+    <br>
+    <div class="example300" data-copy=".tile(300)">This is a <code>.tile(300)</code></div>
+    <br>
+    <div class="example400" data-copy=".tile(400)">This is a <code>.tile(400)</code></div>
+
+    <div class="more">
+      <p>Old busted usage:</p>
+      <div class="example">This is a <code>.tile()</code></div>
+    </div>
+
+    @less
+    .example {
+      .tile();
+    }
+
+    .example100 {
+      .tile(100);
+    }
+
+    .example200 {
+      .tile(200);
+    }
+
+    .example300 {
+      .tile(300);
+    }
+
+    .example400 {
+      .tile(400);
+    }
+
+  @section ui.tiles
+*/
+/**
+Hero Tile:
+`.tileHero()` - Large tile
+
+    @description
+    To be used once a page for large tiles that would otherwise look strange with borders
+
+    @example
+    <div class="example"><br><br>This is a hero tile<br><br></div>
+
+    @less
+    .example {
+      .tileHero();
+    }
+
+  @section ui.tiles
+*/
+/**
+Tabs:
+`.tabs()` - Horizontal nav tabs.
+
+    @example
+    <ul class="example">
+      <li class="active"><a href="#">A link</a></li>
+      <li><a href="#">Another link</a></li>
+    </ul>
+
+    @less
+    .example {
+      .tabs();
+    }
+
+  @section ui.navigation
+*/
+/**
+Border Tabs:
+`.border-tabs()` - Horizontal navs with border, where the list items contain links.
+
+    @example
+    <ul class="example">
+      <li class="active"><a href="#">A link</a></li>
+      <li><a href="#">Another link</a></li>
+    </ul>
+
+    @less
+    .example {
+      .border-tabs();
+    }
+
+  @section ui.navigation
+*/
+/**
+Border Tabs Buttons:
+`.border-tabs-buttons()` - Horizontal navs with border, where the list items contain buttons.
+
+    @example
+    <ul class="example">
+      <li class="active"><button type="button">A button</button></li>
+      <li><button type="button">Another button</button></li>
+    </ul>
+
+    @less
+    .example {
+      .border-tabs-buttons();
+    }
+
+  @section ui.navigation
+*/
+/* ==========================================================================
+   Cards
+========================================================================== */
+/**
+Card:
+`.card()` - Main card style.
+
+    @description
+    TODO: Default padding & param.
+
+    @example
+    <div class="example">This is a card</div>
+
+    @less
+    .example {
+      .card();
+      padding: 20px;
+    }
+
+  @section ui.tiles
+*/
+/**
+Card - Alternate:
+`.cardAlt()` - Alternate card style.
+
+    @description
+    TODO: Default padding & param.
+
+    @example
+    <div class="example">This is an alternate card</div>
+
+    @less
+    .example {
+      .cardAlt();
+      padding: 20px;
+    }
+
+  @section ui.tiles
+*/
+/**
+Card - Inverse:
+`.cardInverse()` - Inverse card style.
+
+    @description
+    TODO: Default padding & param.
+
+    @example
+    <div class="example">This is an inverse card</div>
+
+    @less
+    .example {
+      .cardInverse();
+    }
+
+  @section ui.tiles
+*/
+/**
+Card - Article:
+`.cardArticle()` - Panel with an image taking up the top half and text taking up the bottom. Example would be to use for displaying blog articles.
+
+  @description
+  Note: Adjust font styles on your own within .card_title_wrapper
+  Note: Adjust card width accordingly
+
+  @example
+  <article class="example">
+    <a href="" class="card_link">
+      <img src="/img/seo-landing/blog_img_resume.jpg" alt="" class="card_img">
+      <div class="card_title_wrapper">
+        <h2>Headline</h2>
+        <p class="sub_head">Sub Head</p>
+      </div>
+    </a>
+  </article>
+
+  @less
+
+  .example {
+    .cardArticle();
+    max-width: 370px;
+    margin: 10px auto;
+  }
+
+  @section ui.tiles
+*/
+/**
+Panel Default:
+`.panel-default()` - Default panel for bootstrap-like style panels. Used for documentation etc.
+
+    @description
+    TODO: Deprecate this naming convention, create our own version.
+
+    @example
+    <div class="example">
+      <h3 class="panel-heading">A Heading</h3>
+      <div class="panel-content">
+        <p>Panel content.</p>
+      </div>
+    </div>
+
+    @less
+    .example {
+      .panel-default();
+      .panel-content {
+        padding:20px;
+      }
+    }
+
+  @section ui.tiles
+*/
+/**
+Divider Text:
+`.dividerText()` - Used for having a piece of text visually divide a section with "-------- text --------"
+
+    @description
+    Note: You will need to deal with color, font size and margins outside of the mixin.
+    Note: For all lower-case text, use a @lineHeight of .5
+
+    @example
+    <p class="example">
+      OR
+    </p>
+
+    @less
+    .example {
+      color: blue;
+      font-size: 16px;
+      margin: 10px 0 15px 0;
+      .dividerText(@borderColor: red);
+    }
+
+  @section ui.other
+*/
+/* Base table styles, don't use directly */
+/**
+Tables:
+`.table()` - Default table style.
+
+    @description
+    TODO: Fix up the classes to be consistent between .grayTable and .table.
+
+    @example
+    <p class="note">Default table:</p>
+    <table class="example">
+     <thead>
+        <tr>
+           <th>#</th>
+           <th>First Name</th>
+           <th>Last Name</th>
+           <th>Title</th>
+        </tr>
+     </thead>
+     <tbody>
+        <tr>
+           <th scope="row">1</th>
+           <td>Ward</td>
+           <td>Poulos</td>
+           <td>Co-founder</td>
+        </tr>
+        <tr>
+           <th scope="row">2</th>
+           <td>Willis</td>
+           <td>Redd</td>
+           <td>Co-founder</td>
+        </tr>
+     </tbody>
+  </table>
+
+  <p class="note">Hoverable option (.hoverable):</p>
+  <table class="example hoverable">
+     <thead>
+        <tr>
+           <th>#</th>
+           <th>First Name</th>
+           <th>Last Name</th>
+           <th>Title</th>
+        </tr>
+     </thead>
+     <tbody>
+        <tr>
+           <th scope="row">1</th>
+           <td>Ward</td>
+           <td>Poulos</td>
+           <td>Co-founder</td>
+        </tr>
+        <tr>
+           <th scope="row">2</th>
+           <td>Willis</td>
+           <td>Redd</td>
+           <td>Co-founder</td>
+        </tr>
+     </tbody>
+  </table>
+
+  <p class="note">Responsive option (.responsive-table):</p>
+  <table class="example responsive-table">
+     <thead>
+        <tr>
+           <th>#</th>
+           <th>First Name</th>
+           <th>Last Name</th>
+           <th>Title</th>
+           <th>Longer Header</th>
+           <th>Longer Header</th>
+           <th>Longer Header</th>
+           <th>Longer Header</th>
+        </tr>
+     </thead>
+     <tbody>
+        <tr>
+           <th scope="row">1</th>
+           <td>Ward</td>
+           <td>Poulos</td>
+           <td>Co-founder</td>
+           <td>Foo</td>
+           <td>Bar</td>
+           <td>Foo</td>
+           <td>Bar</td>
+        </tr>
+        <tr>
+           <th scope="row">2</th>
+           <td>Willis</td>
+           <td>Redd</td>
+           <td>Co-founder</td>
+           <td>Foo</td>
+           <td>Bar</td>
+           <td>Foo</td>
+           <td>Bar</td>
+        </tr>
+     </tbody>
+  </table>
+
+    @less
+    .example {
+      .table();
+      margin-bottom:20px;
+    }
+
+    .note {
+      font-size: 13px;
+      margin: 0 0 10px;
+      font-weight: 700;
+    }
+
+  @section ui.tables
+*/
+/**
+Tables 100:
+`.table-100()` - Compressed table style.
+
+    @example
+    <table class="example">
+     <thead>
+        <tr>
+           <th>#</th>
+           <th>First Name</th>
+           <th>Last Name</th>
+           <th>Title</th>
+        </tr>
+     </thead>
+     <tbody>
+        <tr>
+           <th scope="row">1</th>
+           <td>Ward</td>
+           <td>Poulos</td>
+           <td>Co-founder</td>
+        </tr>
+        <tr>
+           <th scope="row">2</th>
+           <td>Willis</td>
+           <td>Redd</td>
+           <td>Co-founder</td>
+        </tr>
+     </tbody>
+  </table>
+
+    @less
+    .example {
+      .table-100();
+    }
+
+  @section ui.tables
+*/
+/**
+Tables 700:
+`.table-700()` - Expanded table style.
+
+    @example
+    <table class="example">
+     <thead>
+        <tr>
+           <th>#</th>
+           <th>First Name</th>
+           <th>Last Name</th>
+           <th>Title</th>
+        </tr>
+     </thead>
+     <tbody>
+        <tr>
+           <th scope="row">1</th>
+           <td>Ward</td>
+           <td>Poulos</td>
+           <td>Co-founder</td>
+        </tr>
+        <tr>
+           <th scope="row">2</th>
+           <td>Willis</td>
+           <td>Redd</td>
+           <td>Co-founder</td>
+        </tr>
+     </tbody>
+  </table>
+
+    @less
+    .example {
+      .table-700();
+    }
+
+  @section ui.tables
+*/
+/*
+Base mixin for tooltips and callouts
+
+TODO: arrow size, 7px(small) / 10px(normal)
+*/
+/*
+
+A possibly temporary mixin used by zrCallout.less.
+Needed for arrow-less tooltip (arrow added by plugin).
+
+*/
+/**
+Tooltip Callout:
+`.tipCallout()` - Used to bring attention to a specific element on page. Use @direction parameter for arrow location. Use .btnTipCallout(); if adding optional button.
+
+    @example
+    <div class="wrapper">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, doloribus.
+
+      <div class="example">
+        <button type="button" class="tooltip_close" data-dismiss="callout">Close</button>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse molestiae eveniet suscipit illo placeat! Laudantium sapiente corrupti cumque cupiditate reprehenderit!</p>
+        <button class="example_btn">Callout Button</button>
+      </div>
+    </div>
+
+    @less
+    .wrapper {
+      min-height: 200px;
+    }
+
+    .example {
+      .tipCallout();
+    }
+
+    .example .example_btn {
+      .btnTipCallout(300);
+    }
+
+  @section ui.feedback
+
+*/
+/**
+Shadows:
+`.shadow()` - Shadows to provide elevation to elements.
+
+
+    @example
+    <ul>
+      <li><b>100</b> - Lowest elevation: for top navbars, in-page panels</li>
+      <li><b>400</b> - Medium elevation: for dropdown menus, callouts, page banners, typeaheads</li>
+      <li><b>700</b> - Highest elevation: for modals, large hero panels </li>
+    </ul>
+    <div class="example_wrap">
+      <div class="example example100">
+      100
+      </div>
+      <div class="example example400">
+      400
+      </div>
+      <div class="example example700">
+      700
+      </div>
+    </div>
+
+    @less
+    b {
+      font-weight: bold;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin: 0 0 10px 20px;
+    }
+    li {
+      margin-bottom: 4px;
+    }
+
+    .example_wrap {
+      background-color: @gray03;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+    }
+    .example {
+      padding: 70px 25px;
+      margin: 20px;
+      text-align: center;
+      background-color: #fff;
+      flex-grow: 1;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+    .example100 {
+      .shadow(100);
+    }
+    .example400 {
+      .shadow(400);
+    }
+    .example700 {
+      .shadow(700);
+    }
+
+  @section ui.other
+*/
+/**
+Float Labels:
+To init JS see `Examples jquery-plugins-float-labels`
+
+    @description
+    Apply to input's container:
+    `.floatLabelsInputs()` - Use with large font-size(16px) inputs
+    `.floatLabelsSmallInputs()` - Use with normal font-size(16px) inputs
+
+
+
+    @example
+    <form class="example_form">
+      <div class="large_text_wrapper filled">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title" value="Saint" />
+      </div>
+      <br />
+      <div class="text_wrapper filled">
+        <label for="first_name">First Name</label>
+        <input type="text" name="first_name" id="first_name" value="John" />
+      </div>
+      <div class="select_wrapper filled">
+        <label for="last_name">Last Name</label>
+        <select name="first_name" id="first_name">
+          <option>Smith</option>
+          <option>Doe</option>
+          <option>Wick</option>
+          <option>del Toro Sanchez</option>
+        </select>
+      </div>
+    </form>
+
+    @less
+    .example_form {
+      .large_text_wrapper {
+        .floatLabelsInputs();
+
+        display: block;
+        font-size: 16px;
+      }
+
+      .text_wrapper,
+      .select_wrapper {
+        .floatLabelsSmallInputs();
+
+        display: inline-block;
+      }
+    }
+  @section ui.other
+*/
+/*
+  default styles to input to prevent flickering before DOM fully loaded
+*/
+/**
+Border Highlight:
+`.border-highlight()` - Vertical highlight for an element.
+
+    @example
+    <h1 class="headline">The Smartest Way to Hire</h1>
+
+    @less
+    .headline {
+      .border-highlight();
+    }
+
+  @section ui.other
+*/
+/**
+Border Highlight Top:
+`.border-highlight-top()` - Top highlight for a container.
+
+    @example
+    <div class="container"></div>
+
+    @less
+    .container {
+      .border-highlight-top();
+    }
+
+  @section ui.other
+*/
+/**
+Full Viewport Height:
+`.fill-viewport()` - Set height to fill viewport.
+
+    @description
+    When calculating 100vh on mobile, toolbars and controls are ignored causing
+    unexpected scrolling. Full-screen modals are particularly affected.
+    https://bugs.webkit.org/show_bug.cgi?id=141832
+
+    @example
+    <div class="example_height">
+      <div class="example_min_height"></div>
+    </div>
+
+    @less
+    .example_height {
+      .fill-viewport(height);
+    }
+
+    .example_min_height {
+      .fill-viewport(min-height);
+    }
+
+    @section utility
+*/
+.zr-icon-base,
+.autocomplete-menu .current_location::before,
+.autocomplete-menu .wfh_remote_label::before {
+  transform: translate(0, 0);
+  background-size: contain;
+  background-position: center;
+  content: " ";
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: text-bottom;
+  background-repeat: no-repeat;
+}
+.autocomplete-menu {
+  border: 1px solid #a6abad;
+  padding: 1px 1px 0;
+  background: #fff;
+  opacity: 0;
+  /* transition: opacity .2s linear; */
+  z-index: 2000;
+  margin-top: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.05), 0 9px 12px rgba(0, 0, 0, 0.1);
+}
+.autocomplete-menu.autocomplete-show {
+  opacity: 1;
+}
+.autocomplete-button {
+  border: 1px solid transparent;
+  background: #fff;
+  display: block;
+  margin-bottom: 1px;
+  padding: 4px;
+  width: 100%;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 700;
+}
+.autocomplete-term {
+  font-weight: 400;
+}
+.autocomplete-button:hover,
+.autocomplete-button.autocomplete-selected {
+  background: #f6f7f8;
+  cursor: default;
+}
+.autocomplete-message {
+  border: 1px solid transparent;
+  background: #fff;
+  display: block;
+  margin-bottom: 1px;
+  padding: 4px;
+  width: 100%;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-style: italic;
+  color: #bfc3c4;
+}
+.autocomplete-sr-only {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: polygon(0 0, 0 0, 0 0);
+  -webkit-clip-path: polygon(0 0, 0 0, 0 0);
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+}
+.autocomplete-menu {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  padding: 16px;
+}
+.autocomplete-menu .current_location {
+  font-weight: 400;
+}
+.autocomplete-menu .current_location::before {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.55682 14.5005L13.3352 3.16522L2 6.94363L7.64539 8.81061L9.55682 14.5005Z' stroke='%236A6F74' stroke-width='1.00017' stroke-linecap='round' stroke-linejoin='round' fill='%23515659'/%3E%3C/svg%3E");
+  margin: -4px 6px 0 0;
+  vertical-align: middle;
+}
+.autocomplete-menu .wfh_remote_label {
+  font-weight: 400;
+}
+.autocomplete-menu .wfh_remote_label::before {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1792' height='1792' fill='none' viewBox='0 0 1792 1792'%3E%3Cdefs%3E%3C/defs%3E%3Cpath d='M173 685c181-180 458-301 723-301s542 121 723 301a64 64 0 1090-90 1191 1191 0 00-813-339c-300 0-610 135-813 339a64 64 0 0090 90z' fill='%232f3639'/%3E%3Cpath d='M425 913a744 744 0 01471-177c170 0 338 66 471 177a64 64 0 0082-98 872 872 0 00-553-207c-203 0-399 79-553 207a64 64 0 1082 98zM685 1165c49-49 133-77 211-77s162 28 211 77a64 64 0 1090-90 437 437 0 00-301-115c-103 0-222 36-301 115a64 64 0 1090 90zM896 1536a128 128 0 100-256 128 128 0 000 256z' fill='%232f3639'/%3E%3C/svg%3E");
+  margin: -4px 6px 0 0;
+  vertical-align: middle;
+}
+.mobile .autocomplete-menu {
+  left: 0 !important;
+  width: 100% !important;
+  position: fixed !important;
+  max-height: calc(100vh - 160px);
+  margin-top: -4px;
+  box-shadow: none;
+  border-radius: 0;
+  border-top: 1px solid #dee1e3;
+}
+.autocomplete-button {
+  font-size: 15px;
+  font-family: inherit;
+  border-radius: 4px;
+  padding: 12px;
+}
+
+
+/*# sourceMappingURL=7734.260e5e99.css.map*/

@@ -80,6 +80,7 @@ input, select, textarea {
 
 	body {
 		-ms-overflow-style: scrollbar;
+		
 	}
 
 	@media screen and (max-width: 480px) {
@@ -97,11 +98,7 @@ input, select, textarea {
 	*, *:before, *:after {
 		box-sizing: inherit;
 	}
-
-	body {
-		background-color: #1e252d;
-	}
-
+	
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 			-moz-animation: none !important;
 			-webkit-animation: none !important;
@@ -148,10 +145,12 @@ input, select, textarea {
 	}
 
 	body, input, select, textarea {
+		
 		font-family: "Merriweather", Georgia, serif;
 		font-weight: 300;
 		font-size: 1rem;
 		line-height: 2.375;
+	
 	}
 
 	a {
@@ -3756,6 +3755,7 @@ input, select, textarea {
 /* Main */
 
 	#main {
+		
 		background-color: #ffffff;
 		position: relative;
 		margin: 0 auto;
